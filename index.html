@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <header>
+    <header>
+        <nav>
             <div class="container">
                 <img src="/assets/logo8medios.png" alt="">
                 <ul>
@@ -17,37 +17,13 @@
                     <li><a href="info.html">+info</a></li>
                 </ul>
             </div>
-        </header>
-    </nav>
+        </nav>
+    </header>
 
-    <section id="galeria" class="gallery">
+    <section id="single-image" class="single-image">
         <div class="container">
-            <div class="gallery-images">
-                <!-- Aquí ajusta las rutas de las imágenes según la estructura de tu proyecto -->
-                <div class="gallery-image">
-                    <img src="/img/IMG_0492.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0495.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0659.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0676.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0810.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0811.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0959.jpg" alt="">
-                </div>
-                <div class="gallery-image">
-                    <img src="/img/IMG_0981.jpg" alt="">
-                </div>
+            <div class="image-container">
+                <img src="/img/IMG_0492.jpg" alt="Imagen de la galería">
             </div>
         </div>
     </section>
@@ -59,5 +35,27 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Array con las rutas de las imágenes
+        const images = [
+            "/img/IMG_0492.jpg",
+            "/img/IMG_0495.jpg",
+            "/img/IMG_0659.jpg",
+            "/img/IMG_0676.jpg",
+            "/img/IMG_0810.jpg",
+            "/img/IMG_0811.jpg",
+            "/img/IMG_0959.jpg",
+            "/img/IMG_0981.jpg"
+        ];
+
+        // Función para cambiar la imagen cada 5 segundos
+        let index = 0;
+        const imageContainer = document.querySelector('.image-container img');
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            const imageUrl = images[index];
+            imageContainer.src = imageUrl;
+        }, 5000);
+    </script>
 </body>
 </html>

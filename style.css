@@ -10,128 +10,142 @@ body {
     background-color: #0c0c0c;
     color: #fff;
     margin: 0; /* Eliminar el margen del cuerpo */
+    padding: 0;
+    overflow-x: hidden; /* Evitar que las imágenes creen una barra de desplazamiento horizontal */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%; /* Ancho máximo de la ventana del navegador */
+    padding: 0; /* Eliminar el relleno */
+    margin: 0; /* Eliminar los márgenes */
+}
+
+/* Estilos para el header */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo semi-transparente */
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
 }
 
-header {
-    padding: 30px 0; /* Reducir el espacio entre el encabezado y el contenedor */
-    text-align: center;
-}
-
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px; /* Reducir el margen inferior del título */
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px; /* Reducir el margen inferior del párrafo */
-}
-
 header img {
-    max-width: 150px; /* Reducir el tamaño del logo */
-    height: auto;
-    margin-bottom: 10px;
+    max-width: 100px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f50057;
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+header ul li:last-child {
+    margin-right: 0;
+}
+
+header ul li a {
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #ff4081;
+header ul li a:hover {
+    color: #cf0000;
 }
 
 .gallery {
-    padding: 50px 0; /* Reducir el espacio entre la galería y el contenedor */
+    margin-top: 100px; /* Espacio superior para evitar que la imagen cubra el encabezado */
     text-align: center;
 }
 
-.gallery-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 10px; /* Reducir el espacio entre las imágenes de la galería */
-}
-
-.gallery-image {
-    width: 100%;
-    height: auto;
+.gallery img {
+    width: 100vw; /* Ancho igual al 100% del ancho de la ventana del navegador */
+    height: auto; /* Altura ajustable */
     border-radius: 10px;
     overflow: hidden;
-}
-
-.gallery-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.gallery-image:hover img {
-    transform: scale(1.1);
 }
 
 footer {
-    padding: 30px 0; /* Reducir el espacio entre el pie de página y el contenedor */
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+    padding: 20px 0; /* Reducir el espacio entre el pie de página y el contenedor */
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    position: fixed; /* Fijar el footer en la parte inferior */
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0; /* Eliminar el margen interior del párrafo en el footer */
+    color: #fff; /* Cambiar el color del texto a blanco */
 }
 
 .fade-in {
     opacity: 1;
 }
 
-/* Estilos para el navbar */
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+.image-container {
+    width: 100vw; /* Ancho igual al 100% del ancho de la ventana del navegador */
+    overflow: hidden; /* Evitar que la imagen desborde el contenedor */
 }
 
-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Añadir espaciado a los lados del contenedor del navbar */
+.image-container img {
+    width: 100%; /* Ancho igual al 100% del ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción de la imagen */
 }
 
-nav img {
-    max-width: 100px;
+/* Estilos para imágenes en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .image-container {
+        width: 100vw; /* Ancho igual al 100% del ancho de la ventana del navegador */
+        height: 100vh; /* Altura igual al 100% del alto de la ventana del navegador */
+        display: flex; /* Utilizar flexbox para centrar horizontal y verticalmente */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        overflow: hidden; /* Evitar que la imagen desborde el contenedor */
+        background: black; /* Fondo negro */
+    }
+
+    .image-container img {
+        max-width: 100%; /* Ancho máximo igual al 100% del ancho del contenedor */
+        height: auto; /* Altura automática para mantener la proporción de la imagen */
+        border-radius: 10px;
+        object-fit: cover; /* La imagen se agrandará lo suficiente para cubrir todo el contenedor */
+    }
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; 
-}
 
-nav ul li {
-    display: inline;
-    margin-right: 10px; 
-}
 
-nav ul li:last-child {
-    margin-right: 0; /* Eliminar el margen derecho del último elemento del menú */
-}
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+/* Idea descartada
+ @media only screen and (max-width: 768px) {
+    .gallery img {
+        width: auto; 
+        height: 100vh; 
+        object-fit: cover; 
+        border-radius: 10px;
+        overflow: hidden;
+    }
 
-nav ul li a:hover {
-    color: #f50057;
-}
+    .image-container {
+        width: 100%; 
+        height: 100vh; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        overflow: hidden; 
+    }
+} */
+
+
