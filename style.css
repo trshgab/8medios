@@ -138,6 +138,38 @@ footer p {
     }
 }
 
+.contact-section {
+    background-color: #000; /* Color de fondo negro */
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: space-around; /* Distribuye los elementos uniformemente */
+    align-items: center;
+    padding: 20px; /* Añade un poco de espacio alrededor de los elementos */
+}
+
+.contact-item {
+    width: 100%; /* Ocupa todo el ancho del container */
+    margin-bottom: 20px; /* Espacio entre cada elemento */
+    position: relative; /* Para posicionar el texto encima de las imágenes */
+}
+
+.contact-item img {
+    width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+    height: auto;
+    border-radius: 10px;
+    filter: brightness(0.7); /* Reduce el brillo para oscurecer la imagen */
+}
+
+.contact-info {
+    font-weight: bold; /* Texto en negrita */
+    position: absolute; /* Posiciona el texto encima de la imagen */
+    top: 50%; /* Lo posiciona en la mitad superior de la imagen */
+    left: 50%; /* Lo posiciona en el centro horizontalmente */
+    transform: translate(-50%, -50%); /* Lo centra correctamente */
+    z-index: 1; /* Asegura que esté por encima de la imagen */
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+}
 
 
 
