@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace bold;
     background-color: #000; /* Color de fondo negro */
     color: #fff;
     margin: 0; /* Eliminar el margen del cuerpo */
@@ -67,7 +67,7 @@ header ul li a:hover {
 }
 
 .gallery {
-    margin-top: 80px; /* Espacio superior para evitar que el encabezado cubra las imágenes */
+    margin-top: 120px; /* Espacio superior para evitar que el encabezado cubra las imágenes */
     text-align: center;
 }
 

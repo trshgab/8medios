@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace bold;
     background-color: #0c0c0c;
     color: #fff;
     margin: 0; /* Eliminar el margen del cuerpo */
@@ -75,6 +75,19 @@ header ul li a:hover {
     height: auto; /* Altura ajustable */
     border-radius: 10px;
     overflow: hidden;
+    animation: fadeInUp 5s ease-in-out; 
+    /* no funciona la animacion lol */
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 footer {
