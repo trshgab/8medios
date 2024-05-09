@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #000; /* Color de fondo negro */
     color: #fff;
     margin: 0; /* Eliminar el margen del cuerpo */
